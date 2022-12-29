@@ -7,9 +7,9 @@ const operation = document.querySelector('.operation');   //Operation Screen
 To hide previus result obtained when entering a new operation
 ¨*/
 function checkScreen(){
-  if( !(operation.textContent === '') && !(result.textContent === '') ){
+  if( !(operation.innerText === '') && !(result.innerText === '') ){
     result.classList.add('result--hide');
-  } else if (operation.textContent === '' && !(result.textContent === '')){
+  } else if (operation.innerText === '' && !(result.innerText === '')){
     result.classList.remove("result--hide")
   }
 }
@@ -22,40 +22,40 @@ Event listener when clicking a button
 button.forEach( btn => {
   btn.addEventListener('click', (e) => {
 
-  switch(e.target.textContent){
+  switch(e.target.innerText){
     //Clear all
     case 'CA':
-      operation.textContent = '';
-      result.textContent = '';
+      operation.innerText = '';
+      result.innerText = '';
       break;
     //Erase last character entered
     case 'C':
-      operation.textContent = operation.textContent.slice(0, -1);
+      operation.innerText = operation.innerText.slice(0, -1);
       break;
     //Pick previous result to make a new operation
     case 'Ans':
-      if(result.textContent === '')
+      if(result.innerText === '')
         break;
 
-      operation.textContent = result.textContent;
-      result.textContent = 'Ans = '+result.textContent;
+      operation.innerText = result.innerText;
+      result.innerText = 'Ans = '+result.innerText;
       break;
     //Solve the operation entered and show on the screen
     case '=':
-      if(operation.textContent === '')
+      if(operation.innerText === '')
         break;
 
       try{
-        result.textContent = eval(operation.textContent);
-        operation.textContent = '';
+        result.innerText = eval(operation.innerText);
+        operation.innerText = '';
       } catch {
-        result.textContent = "Error!";
-        operation.textContent = '';
+        result.innerText = "Error!";
+        operation.innerText = '';
       }
       break;
     //Enter a character in the operation screnn
     default:
-      operation.textContent += btn.textContent;
+      operation.innerText += btn.innerText;
       break;
   }
 
