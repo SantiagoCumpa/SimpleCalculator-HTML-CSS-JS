@@ -9,7 +9,9 @@ Simple Calculator using HTML, CSS and JavaScript. Supports simple arithmetic ope
    <li>Enter your operation</li>
 </ul>
 
+<<<<<<< branch1
 Or you can go to: https://simplecalculatorhtmlcssjs.netlify.app
+=======
 
 ## Screenshots
 -Light Theme
